@@ -1,0 +1,40 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+% Clean formatting for sections
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+
+\begin{document}
+
+% --- HEADER ---
+\begin{center}
+    {\Huge \textbf{<< full_name >>}} \\
+    \vspace{2mm}
+    << email >> $|$ \href{<< linkedin_url >>}{LinkedIn} \\
+    \vspace{2mm}
+    {\large \textbf{<< job_title >>}}
+\end{center}
+
+\vspace{4mm}
+
+% --- EDUCATION ---
+\section*{Education}
+\noindent \textbf{<< university_name >>} \hfill << graduation_year >> \\
+\textit{<< degree_major >>}
+
+\vspace{4mm}
+
+% --- SKILLS ---
+\section*{Core Skills}
+\noindent << core_skills >>
+
+\vspace{4mm}
+
+% --- EXPERIENCE & PROJECTS ---
+\section*{Experience \& Projects}
+% The AI will generate the actual \begin{itemize} and \item tags for this section
+<< ai_generated_experience >>
+
+\end{document}

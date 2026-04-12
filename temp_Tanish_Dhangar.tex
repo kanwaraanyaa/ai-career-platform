@@ -1,0 +1,45 @@
+\documentclass[10pt, letterpaper]{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\definecolor{sidebarColor}{HTML}{E1F5FE} % Light Blue Sidebar
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{minipage}[t]{0.30\textwidth} % Left Sidebar
+    \begin{tcolorbox}[colback=sidebarColor, colframe=sidebarColor, height=25cm, arc=0mm, top=10mm]
+        {\huge \textbf{Contact}} \\
+        \vspace{4mm}
+        \small tanish@example.com \\
+        \small \href{linkedin.com/in/tanishdhangar}{LinkedIn}
+        
+        \vspace{10mm}
+        {\huge \textbf{Skills}} \\
+        \vspace{4mm}
+        \small Python, React, Next.js, FastAPI, LaTeX, Machine Learning
+    \end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.65\textwidth} % Main Content
+    \vspace{10mm}
+    {\Huge \textbf{Tanish Dhangar}} \\
+    {\large \textit{AI & Software Engineer}}
+    
+    \vspace{8mm}
+    \section*{Education}
+    \textbf{Vishwakarma Institute Of Technology} \\
+    B.Tech in Computer Science $|$ 2026
+    
+    \vspace{8mm}
+    \section*{Experience \& Projects}
+    \begin{itemize}
+    \item Developed a Full-Stack AI Career Platform using FastAPI and Next.js, featuring an automated PDF resume generator.
+    \item Integrated Google Gemini 1.5 Flash to transform raw user notes into professionally formatted, ATS-optimized bullet points.
+    \item Engineered a custom LaTeX-to-PDF pipeline using MiKTeX to provide high-fidelity, designer-grade resume templates.
+\end{itemize}
+\end{minipage}
+
+\end{document}

@@ -1,0 +1,66 @@
+python
+java
+c++
+sql
+machine learning
+deep learning
+data science
+nlp
+pandas
+numpy
+scikit-learn
+tensorflow
+pytorch
+docker
+kubernetes
+aws
+azure
+gcp
+tableau
+power bi
+excel
+statistics
+data visualization
+data analysis
+data engineering
+matplotlib
+seaborn
+spark
+hadoop
+git
+linux
+rest api
+microservices
+system design
+machine learning
+eda
+regression
+hypothesis testing
+data cleaning
+etl
+data warehousing
+bigquery
+plotly
+statsmodels
+scipy
+r
+javascript
+typescript
+nodejs
+react
+django
+flask
+celery
+redis
+kafka
+rabbitmq
+jwt
+oauth2
+firebase
+twilio
+sendgrid
+chartjs
+postgresql
+gcp
+ci/cd
+microservices

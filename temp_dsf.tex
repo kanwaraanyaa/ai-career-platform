@@ -1,0 +1,140 @@
+\documentclass[10pt, letterpaper]{article}
+
+% --- FIX: Manual Stub for missing LGR encoding ---
+\makeatletter
+\@namedef{ver@lgrenc.def}{}
+\makeatother
+
+% --- Essential Packages ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in, top=0.5in, bottom=0.5in]{geometry} 
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem} 
+\usepackage{paracol} 
+\usepackage{needspace}
+
+% --- Professional Fonts ---
+\usepackage{charter} 
+\usepackage[sfdefault]{inter} 
+
+% --- Color Definitions ---
+\definecolor{sidebarColor}{HTML}{F8FAFC} 
+\definecolor{accentColor}{HTML}{0F172A}  
+\definecolor{lineColor}{HTML}{CBD5E1}    
+
+% --- Global List Settings ---
+\setlist[itemize]{
+    label=\textbullet,
+    leftmargin=1.2em,
+    nosep,
+    topsep=0pt,
+    partopsep=0pt,
+    parsep=2pt,
+    after=\vspace{2mm}
+}
+
+% --- Multi-page Column Setup ---
+\columnratio{0.30} 
+\columnsep 0.05\textwidth
+\backgroundcolor{c[0]}[rgb]{0.97, 0.98, 0.99} 
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{paracol}{2}
+    % ==========================================
+    % LEFT COLUMN - SIDEBAR
+    % ==========================================
+    \begin{leftcolumn}
+        \vspace{10mm} 
+        \begin{flushleft}
+            {\large \textbf{\color{accentColor}CONTACT}} \\
+            \small dbdfbdfb@gmail.com \\
+            \small 7648756437 \\             \small \href{linkedin.com/in/alexrivera-dev}{LinkedIn} \\             \small \href{hgfuyr.rgjrh}{GitHub} \\             \small \href{egfuegyf.rjgfhr}{Coding Profile} \\             
+            \vspace{10mm}
+
+            % --- CONDITIONAL EDUCATION ---
+                    \end{flushleft}
+    \end{leftcolumn}
+
+    % ==========================================
+    % RIGHT COLUMN - MAIN BODY
+    % ==========================================
+    \begin{rightcolumn}
+        \vspace{2mm} 
+        {\Huge \textbf{\color{accentColor}dsf}} \\
+        {\large \textit{dgdfgb}}
+        
+        \vspace{8mm} 
+        
+        % --- TECHNICAL SKILLS ---
+        {\Large \textbf{Technical Skills}}
+        \vspace{1mm}
+        {\color{lineColor}\hrule}
+        \vspace{3mm}
+        {\small }
+        
+        % --- EXPERIENCE ---
+                    \vspace{8mm} 
+            \needspace{6cm} 
+            {\Large \textbf{Experience}}
+            \vspace{1mm}
+            {\color{lineColor}\hrule}
+            \vspace{4mm}
+            
+                            \begin{minipage}[t]{\linewidth}
+                    \noindent \textbf{} $|$  \hfill \small  --  \\
+                    \textit{\small } \\
+                    \vspace{1mm} 
+                    {\small \begin{itemize}  \end{itemize}} 
+                    \vspace{4mm} 
+                \end{minipage}
+                            
+        % --- PROJECTS ---
+                    \vspace{4mm} 
+            \needspace{6cm} 
+            {\Large \textbf{Projects}}
+            \vspace{1mm}
+            {\color{lineColor}\hrule}
+            \vspace{4mm}
+            
+                            \begin{minipage}[t]{\linewidth}
+                    \noindent \textbf{} \\
+                    \vspace{1mm} 
+                    {\small \begin{itemize}  \end{itemize}}
+                    \vspace{4mm} 
+                \end{minipage}
+                    
+        % --- RESEARCH ---
+                    \vspace{4mm} 
+            \needspace{6cm}
+            {\Large \textbf{Research \& Publications}}
+            \vspace{1mm}
+            {\color{lineColor}\hrule}
+            \vspace{4mm}
+            
+                            \begin{minipage}[t]{\linewidth}
+                    \noindent \textbf{} \hfill \small  \\
+                    {\small }
+                    \vspace{4mm}
+                \end{minipage}
+                    
+        % --- CERTIFICATIONS ---
+                    \vspace{4mm} 
+            \needspace{4cm}
+            {\Large \textbf{Certifications}}
+            \vspace{1mm}
+            {\color{lineColor}\hrule}
+            \vspace{4mm}
+
+            \begin{itemize}[leftmargin=0pt, label={}, nosep]
+                                    \item \textbf{} \hspace{1mm} $|$ \hspace{1mm} \textit{} \hfill \small 
+                    \vspace{2mm} 
+                            \end{itemize}
+        
+    \end{rightcolumn}
+\end{paracol}
+
+\end{document}

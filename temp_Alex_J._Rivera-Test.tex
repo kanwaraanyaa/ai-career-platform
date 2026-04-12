@@ -1,0 +1,98 @@
+\documentclass[10pt, letterpaper]{article}
+
+% --- FIX: Manual Stub for missing LGR encoding ---
+\makeatletter
+\@namedef{ver@lgrenc.def}{}
+\makeatother
+
+% --- Essential Packages ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in, top=0.5in, bottom=0.5in]{geometry} 
+\usepackage[most]{tcolorbox}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem} 
+
+% --- Professional Fonts ---
+\usepackage{charter} 
+\usepackage[sfdefault]{inter} % REMOVED 'nolgr' to stop that error
+
+% --- Color Definitions ---
+\definecolor{sidebarColor}{HTML}{F8FAFC} 
+\definecolor{accentColor}{HTML}{0F172A}  
+\definecolor{lineColor}{HTML}{CBD5E1}    
+
+% --- Global List Settings (Ensures AI bullets look perfect) ---
+\setlist[itemize]{
+    label=\textbullet,
+    leftmargin=1.2em,
+    nosep,
+    topsep=0pt,
+    partopsep=0pt,
+    parsep=2pt,
+    after=\vspace{2mm}
+}
+
+\begin{document}
+\pagestyle{empty}
+
+\noindent
+\begin{minipage}[t]{0.30\textwidth}
+    \begin{tcolorbox}[
+        colback=sidebarColor, colframe=sidebarColor, height=25.2cm, 
+        before=\vspace{-12mm}, arc=0mm, sharp corners, top=10mm, left=4mm, right=4mm
+    ]
+        {\large \textbf{\color{accentColor}CONTACT}} \\
+        \small alex.rivera@example.com \\
+        \small \href{linkedin.com/in/alexrivera-dev}{LinkedIn Profile}
+        
+        \vspace{8mm}
+        {\large \textbf{\color{accentColor}SKILLS}} \\
+        \small \raggedright React 19, Next.js 15, TypeScript, FastAPI, PostgreSQL, AWS (S3, EC2), Docker, LaTeX, Tailwind CSS
+
+        \vspace{8mm}
+        {\large \textbf{\color{accentColor}EDUCATION}} \\
+        \small \textbf{Tech Institute of Innovation} \\
+        \small B.Tech in Computer Science & Engineering \\
+        \small 2025
+        \vfill%
+    \end{tcolorbox}
+\end{minipage}% 
+\hfill
+\begin{minipage}[t]{0.64\textwidth}
+    \vspace{-10mm} 
+    {\Huge \textbf{\color{accentColor}Alex J. Rivera-Test}} \\
+    {\large \textit{Senior Full Stack Engineer}}
+    
+    \vspace{8mm}
+    {\Large \textbf{Experience}}
+    \vspace{1mm}
+    {\color{lineColor}\hrule}
+    \vspace{3mm}
+    
+            \noindent \textbf{CloudStream Systems} $|$ Software Engineering Intern \hfill \small Jan 2026 -- Present \\
+        \textit{\small Remote (San Francisco, CA)} \\
+        \vspace{-2mm} %
+        {\small \begin{itemize} \item Developed a high-performance real-time analytics dashboard using React and Tailwind CSS, resulting in a 20% increase in user engagement. \item Optimized complex PostgreSQL database queries to enhance backend efficiency, successfully reducing API response times from 500ms to 150ms. \item Collaborated with a cross-functional team of 5 developers to engineer and deploy a critical beta feature, successfully scaling to support over 10,000 active users. \end{itemize}} % Directly injects \begin{itemize} from AI
+        
+    \vspace{2mm}
+    {\Large \textbf{Projects}}
+    \vspace{1mm}
+    {\color{lineColor}\hrule}
+    \vspace{3mm}
+    
+            \noindent \textbf{AI-Powered Task Automator} \\
+        \vspace{-2mm} %
+        {\small \begin{itemize} \item Engineered a scalable Python-based web scraping engine using BeautifulSoup to aggregate real-time hardware pricing data across major e-commerce platforms. \item Implemented multi-threaded execution patterns to optimize data retrieval processes, achieving a 60% reduction in total processing time. \item Automated data normalization and export workflows into structured CSV formats to streamline procurement analysis and cost-comparison decision-making for internal lab infrastructure. \end{itemize}}
+    
+    \vspace{2mm}
+    {\Large \textbf{Research \& Publications}}
+    \vspace{1mm}
+    {\color{lineColor}\hrule}
+    \vspace{3mm}
+    
+            \noindent \textbf{CNN-Based Oncology Diagnostics (2024)} \hfill \small 2026 \\
+        {\small • Automated data normalization and export workflows into structured CSV formats to streamline procurement analysis and cost-comparison decision-making for internal lab infrastructure.}
+    \end{minipage}
+\end{document}

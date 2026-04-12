@@ -1,0 +1,201 @@
+\documentclass[10pt, letterpaper]{article}
+
+% --- FIX: Manual Stub for missing LGR encoding ---
+\makeatletter
+\@namedef{ver@lgrenc.def}{}
+\makeatother
+
+% --- Essential Packages ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.5in, top=0.5in, bottom=0.5in]{geometry} 
+\usepackage{xcolor}
+\usepackage[hidelinks, breaklinks]{hyperref}
+\usepackage{enumitem} 
+\usepackage{paracol} 
+\usepackage{needspace}
+\usepackage[most]{tcolorbox} 
+
+% --- Color Definitions ---
+\definecolor{sidebarColor}{HTML}{F8FAFC} 
+\definecolor{accentColor}{HTML}{0F172A}  
+\definecolor{lineColor}{HTML}{CBD5E1}    
+
+% --- Hyperref Setup ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accentColor,
+    urlcolor=blue,
+}
+
+% --- TColorBox Global Setup (BALANCED ENTRY SPACING) ---
+\tcbset{
+    blanker, 
+    breakable, 
+    width=\linewidth,
+    before skip=0pt,
+    after skip=0pt,
+    top=0pt,
+    bottom=4mm % Professional gap between different entries
+}
+
+% --- Professional Fonts ---
+\usepackage{charter} 
+\usepackage[sfdefault]{inter} 
+
+% --- Global List Settings (NO OVERLAP PROXIMITY) ---
+\setlist[itemize]{
+    label=\textbullet,
+    leftmargin=1.2em,
+    nosep,           
+    topsep=0pt,      % Tight proximity without overlapping text
+    partopsep=0pt,
+    parsep=1.5pt,    
+    after=\vspace{0mm}
+}
+
+% --- Multi-page Column Setup ---
+\columnratio{0.25} 
+\columnsep 0.05\textwidth
+\backgroundcolor{c[0]}[rgb]{0.97, 0.98, 0.99} 
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{paracol}{2}
+    % ==========================================
+    % LEFT COLUMN - SIDEBAR
+    % ==========================================
+    \begin{leftcolumn}
+        \vspace{10mm} 
+        \begin{flushleft}
+            {\large \textbf{\color{accentColor}CONTACT}} \\
+            \small << email >> 
+            \BLOCK{ if phone } \\ \small << phone >> \BLOCK{ endif }
+            \BLOCK{ if linkedin_url } \\ \small \href{https://<< linkedin_url >>}{\color{blue}LinkedIn} \BLOCK{ endif }
+            \BLOCK{ if github_url } \\ \small \href{https://<< github_url >>}{\color{blue}GitHub} \BLOCK{ endif }
+            \BLOCK{ if coding_profile_url } \\ \small \href{https://<< coding_profile_url >>}{\color{blue}Coding Profile} \BLOCK{ endif }
+            
+            \vspace{10mm}
+
+            % --- CONDITIONAL EDUCATION ---
+            \BLOCK{ if university_name }
+                {\large \textbf{\color{accentColor}EDUCATION}} \\
+                \small \textbf{<< university_name >>} \\
+                \BLOCK{ if degree_major }\small << degree_major >> \\ \BLOCK{ endif }
+                \BLOCK{ if graduation_year }\small << graduation_year >> \\ \BLOCK{ endif }
+            \BLOCK{ endif }
+        \end{flushleft}
+    \end{leftcolumn}
+
+    % ==========================================
+    % RIGHT COLUMN - MAIN BODY
+    % ==========================================
+    \begin{rightcolumn}
+        \vspace{4mm} 
+        % Remove any paragraph indent for the name
+        \noindent{\Huge \textbf{\color{accentColor}<< full_name >>}} \\
+        \noindent{\large \textit{<< job_title >>}}
+        
+        \vspace{6mm} 
+        
+        % --- TECHNICAL SKILLS ---
+        \BLOCK{ if core_skills }
+            \noindent{\Large \textbf{Technical Skills}}
+            \vspace{0.5mm}
+            \noindent{\color{lineColor}\hrule}
+            \vspace{3mm}
+            % Use \noindent to ensure skills text isn't indented
+            \noindent{\small << core_skills >>}
+        \BLOCK{ endif }
+        
+       % --- EXPERIENCE ---
+\BLOCK{ if experiences }
+    \vspace{6mm} 
+    \needspace{5cm} 
+    \noindent{\Large \textbf{Experience}}
+    \vspace{0.5mm}
+    \noindent{\color{lineColor}\hrule}
+    \vspace{4mm} 
+    
+    \BLOCK{ for exp in experiences }
+        \begin{tcolorbox}[left=0pt, right=0pt] 
+            % Increased to 0.82 width and added \raggedright to prevent "In-tern" hyphenation
+            \begin{tabular*}{\linewidth}{@{}p{0.82\linewidth} @{\extracolsep{\fill}} r@{}}
+                \raggedright \textbf{<< exp.company >>} $|$ << exp.role >> & \small << exp.startDate >> -- << 'Present' if exp.current else exp.endDate >> \\
+                \textit{\small << exp.location >>} & \\
+            \end{tabular*}
+            \vspace{-2.5mm} 
+            \BLOCK{ if exp.description }
+                {\small << exp.description >>} 
+            \BLOCK{ endif }
+        \end{tcolorbox}
+    \BLOCK{ endfor }
+\BLOCK{ endif }
+        
+        % --- PROJECTS ---
+        \BLOCK{ if projects }
+            \vspace{4mm} 
+            \needspace{5cm} 
+            \noindent{\Large \textbf{Projects}}
+            \vspace{0.5mm}
+            \noindent{\color{lineColor}\hrule}
+            \vspace{4mm}
+            
+            \BLOCK{ for proj in projects }
+                \begin{tcolorbox}[left=0pt, right=0pt]
+                    \noindent \textbf{<< proj.title >>}
+                    \BLOCK{ if proj.description }
+                        {\small << proj.description >>}
+                    \BLOCK{ endif }
+                \end{tcolorbox}
+            \BLOCK{ endfor }
+        \BLOCK{ endif }
+
+        % --- RESEARCH & PUBLICATIONS ---
+\BLOCK{ if research }
+    \vspace{4mm} 
+    \needspace{5cm}
+    \noindent{\Large \textbf{Research \& Publications}}
+    \vspace{0.5mm}
+    \noindent{\color{lineColor}\hrule}
+    \vspace{4mm}
+    
+    \BLOCK{ for res in research }
+        \begin{tcolorbox}[left=0pt, right=0pt]
+            % This table "locks" the title and date, forcing the bullets to start below
+            \begin{tabular*}{\linewidth}{@{}p{0.82\linewidth} @{\extracolsep{\fill}} r@{}}
+                \raggedright \textbf{<< res.title >>} & \small << res.date >> \\
+            \end{tabular*}
+            \vspace{-2.8mm} 
+            
+            \BLOCK{ if res.description }
+                % Small font size matching other sections
+                {\small << res.description >>} 
+            \BLOCK{ endif }
+        \end{tcolorbox}
+    \BLOCK{ endfor }
+\BLOCK{ endif }
+
+        % --- CERTIFICATIONS ---
+        \BLOCK{ if certifications and certifications|length > 0 }
+            \vspace{4mm} 
+            \needspace{3cm}
+            \noindent{\Large \textbf{Certifications}}
+            \vspace{0.5mm}
+            \noindent{\color{lineColor}\hrule}
+            \vspace{3mm}
+
+            % leftmargin=0pt ensures bullets align with the "C" in Certifications
+            \begin{itemize}[leftmargin=0pt, label={}, nosep, topsep=1pt]
+                \BLOCK{ for cert in certifications }
+                    \item \textbf{<< cert.name >>} \hspace{1mm} $|$ \hspace{1mm} \textit{<< cert.issuer >>} \hfill \small << cert.date >>
+                    \vspace{1.5mm} 
+                \BLOCK{ endfor }
+            \end{itemize}
+        \BLOCK{ endif }
+
+    \end{rightcolumn}
+\end{paracol}
+
+\end{document}
