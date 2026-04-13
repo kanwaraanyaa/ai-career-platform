@@ -2,7 +2,7 @@ from fastapi import APIRouter, UploadFile, File, Form
 import shutil
 import re
 
-from backend.utils.pdf_reader import extract_resume_text
+from utils.pdf_reader import extract_resume_text
 from backend.services.resume_parser import extract_full_profile_intelligence
 from backend.services.github_analyzer import analyze_github_profile
 from backend.services.coding_analyzer import analyze_coding_profile
