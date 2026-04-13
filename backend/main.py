@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from backend.routes import upload, analysis, resume
+from routes import upload, analysis, resume
 # Import the service that handles the AI logic
 from backend.services.ai_resume_service import generate_latex_bullets
 
